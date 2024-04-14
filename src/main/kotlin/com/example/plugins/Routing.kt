@@ -29,5 +29,9 @@ fun Application.configureRouting() {
             val type = ContentType.parse("text/html")
             call.respondText(text, type)
         }
+
+        get("/error-test") {
+            throw IllegalStateException("Too Busy")
+        }
     }
 }
